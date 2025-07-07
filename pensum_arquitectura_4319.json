@@ -1,0 +1,441 @@
+{
+    "programa": "Arquitectura",
+    "codigo_programa": "4319",
+    "creditos_totales": 167,
+    "niveles": [
+        {
+            "nivel": 1,
+            "materias": [
+                {
+                    "codigo": "ARQA101",
+                    "nombre": "Antropología",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "ARQA104",
+                    "nombre": "Construcción I",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "ARQA103",
+                    "nombre": "Dibujo Proyectual",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "ARQA102",
+                    "nombre": "Diseño Arquitectónico I",
+                    "creditos": 6
+                },
+                {
+                    "codigo": "INS002",
+                    "nombre": "Formación Democrática y Ciudadana",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "INS101",
+                    "nombre": "Inglés I",
+                    "creditos": 1
+                },
+                {
+                    "codigo": "FAI001",
+                    "nombre": "Matemáticas Operativas",
+                    "creditos": 3
+                }
+            ]
+        },
+        {
+            "nivel": 2,
+            "materias": [
+                {
+                    "codigo": "ARQA205",
+                    "nombre": "Construcción II",
+                    "creditos": 2,
+                    "requisitos": [
+                        "ARQA104"
+                    ]
+                },
+                {
+                    "codigo": "ARQA201",
+                    "nombre": "Diseño Arquitectónico II",
+                    "creditos": 6,
+                    "requisitos": [
+                        "ARQA102"
+                    ]
+                },
+                {
+                    "codigo": "ARQA203",
+                    "nombre": "Geometría Descriptiva",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "ARQA204",
+                    "nombre": "Historia de la Arquitectura I",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "INS102",
+                    "nombre": "Inglés II",
+                    "creditos": 1,
+                    "requisitos": [
+                        "INS101"
+                    ]
+                },
+                {
+                    "codigo": "ARQA206",
+                    "nombre": "Modelación",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "ARQA202",
+                    "nombre": "Electiva Institucional I",
+                    "creditos": 2
+                }
+            ]
+        },
+        {
+            "nivel": 3,
+            "materias": [
+                {
+                    "codigo": "ARQA303",
+                    "nombre": "Construcción III",
+                    "creditos": 2,
+                    "requisitos": [
+                        "ARQA205"
+                    ]
+                },
+                {
+                    "codigo": "ARQA305",
+                    "nombre": "Dibujo Arquitectónico",
+                    "creditos": 3,
+                    "requisitos": [
+                        "ARQA203"
+                    ]
+                },
+                {
+                    "codigo": "ARQA301",
+                    "nombre": "Diseño Arquitectónico III",
+                    "creditos": 6,
+                    "requisitos": [
+                        "ARQA201"
+                    ]
+                },
+                {
+                    "codigo": "ARQA304",
+                    "nombre": "Ecología Urbana",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "ARQA302",
+                    "nombre": "Historia de la Arquitectura II",
+                    "creditos": 2,
+                    "requisitos": [
+                        "ARQA204"
+                    ]
+                },
+                {
+                    "codigo": "INS103",
+                    "nombre": "Inglés III",
+                    "creditos": 1,
+                    "requisitos": [
+                        "INS102"
+                    ]
+                }
+            ]
+        },
+        {
+            "nivel": 4,
+            "materias": [
+                {
+                    "codigo": "ARQA404",
+                    "nombre": "Arquitectura y Sostenibilidad",
+                    "creditos": 2,
+                    "requisitos": [
+                        "ARQA304"
+                    ]
+                },
+                {
+                    "codigo": "ARQA402",
+                    "nombre": "Diseño Arquitectónico IV",
+                    "creditos": 6,
+                    "requisitos": [
+                        "ARQA301"
+                    ]
+                },
+                {
+                    "codigo": "INS104",
+                    "nombre": "Inglés IV",
+                    "creditos": 1,
+                    "requisitos": [
+                        "INS103"
+                    ]
+                },
+                {
+                    "codigo": "ARQA401",
+                    "nombre": "Representación Digital I",
+                    "creditos": 3
+                },
+                {
+                    "codigo": "ARQA405",
+                    "nombre": "Teoría de la Arquitectura I",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "ARQA403",
+                    "nombre": "Electiva Institucional II",
+                    "creditos": 2
+                }
+            ]
+        },
+        {
+            "nivel": 5,
+            "materias": [
+                {
+                    "codigo": "ARQA503",
+                    "nombre": "Bioclimática",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "ARQA505",
+                    "nombre": "Construcción IV: Topografía",
+                    "creditos": 3,
+                    "requisitos": [
+                        "FAI001",
+                        "ARQA401"
+                    ]
+                },
+                {
+                    "codigo": "ARQA502",
+                    "nombre": "Diseño Arquitectónico V",
+                    "creditos": 6,
+                    "requisitos": [
+                        "ARQA402"
+                    ]
+                },
+                {
+                    "codigo": "ARQA501",
+                    "nombre": "Representación Digital II",
+                    "creditos": 3,
+                    "requisitos": [
+                        "ARQA401"
+                    ]
+                },
+                {
+                    "codigo": "ARQA504",
+                    "nombre": "Teoría de la Arquitectura II",
+                    "creditos": 2,
+                    "requisitos": [
+                        "ARQA405"
+                    ]
+                },
+                {
+                    "codigo": "ARQA506",
+                    "nombre": "Electiva Institucional III",
+                    "creditos": 2
+                }
+            ]
+        },
+        {
+            "nivel": 6,
+            "materias": [
+                {
+                    "codigo": "ARQA605",
+                    "nombre": "Construcción V: Instalaciones",
+                    "creditos": 2,
+                    "requisitos": [
+                        "ARQA303"
+                    ]
+                },
+                {
+                    "codigo": "ARQA602",
+                    "nombre": "Diseño Arquitectónico VI",
+                    "creditos": 6,
+                    "requisitos": [
+                        "ARQA502"
+                    ]
+                },
+                {
+                    "codigo": "ARQA603",
+                    "nombre": "Habitabilidad y Confort",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "INS105",
+                    "nombre": "Inglés V",
+                    "creditos": 1,
+                    "requisitos": [
+                        "INS104"
+                    ]
+                },
+                {
+                    "codigo": "ARQA601",
+                    "nombre": "Representación Digital III",
+                    "creditos": 3,
+                    "requisitos": [
+                        "ARQA501"
+                    ]
+                },
+                {
+                    "codigo": "ARQA604",
+                    "nombre": "Teoría Urbana",
+                    "creditos": 2
+                }
+            ]
+        },
+        {
+            "nivel": 7,
+            "materias": [
+                {
+                    "codigo": "ARQA701",
+                    "nombre": "Diseño Arquitectónico VII",
+                    "creditos": 6,
+                    "requisitos": [
+                        "ARQA602"
+                    ]
+                },
+                {
+                    "codigo": "FAI022",
+                    "nombre": "Gestión Ambiental",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "INS106",
+                    "nombre": "Inglés VI",
+                    "creditos": 1,
+                    "requisitos": [
+                        "INS105"
+                    ]
+                },
+                {
+                    "codigo": "ARQA702",
+                    "nombre": "Metodología de la Investigación",
+                    "creditos": 3,
+                    "requisitos": [
+                        "ARQA502",
+                        "ARQA504"
+                    ]
+                },
+                {
+                    "codigo": "ARQA703",
+                    "nombre": "Ordenamiento Territorial",
+                    "creditos": 3
+                },
+                {
+                    "codigo": "ARQA705",
+                    "nombre": "Optativa I",
+                    "creditos": 3
+                }
+            ]
+        },
+        {
+            "nivel": 8,
+            "materias": [
+                {
+                    "codigo": "ARQA801",
+                    "nombre": "Anteproyecto de Investigación",
+                    "creditos": 2,
+                    "requisitos": [
+                        "ARQA702"
+                    ]
+                },
+                {
+                    "codigo": "ARQA802",
+                    "nombre": "Diseño Arquitectónico VIII",
+                    "creditos": 6,
+                    "requisitos": [
+                        "ARQA701"
+                    ]
+                },
+                {
+                    "codigo": "FAI016",
+                    "nombre": "Ética",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "ARQA804",
+                    "nombre": "Gestión de la Construcción I",
+                    "creditos": 2,
+                    "requisitos": [
+                        "ARQA605"
+                    ]
+                },
+                {
+                    "codigo": "INS040",
+                    "nombre": "Electiva IV",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "ARQA803",
+                    "nombre": "Optativa II",
+                    "creditos": 3,
+                    "requisitos": [
+                        "ARQA705"
+                    ]
+                }
+            ]
+        },
+        {
+            "nivel": 9,
+            "materias": [
+                {
+                    "codigo": "ARQA902",
+                    "nombre": "Diseño Arquitectónico IX",
+                    "creditos": 6,
+                    "requisitos": [
+                        "ARQA802"
+                    ]
+                },
+                {
+                    "codigo": "ARQA905",
+                    "nombre": "Emprendimiento e Innovación",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "ARQA904",
+                    "nombre": "Gestión de la Construcción II",
+                    "creditos": 2,
+                    "requisitos": [
+                        "ARQA605"
+                    ]
+                },
+                {
+                    "codigo": "ARQA903",
+                    "nombre": "Trabajo de Grado",
+                    "creditos": 2,
+                    "requisitos": [
+                        "ARQA801"
+                    ]
+                },
+                {
+                    "codigo": "INS041",
+                    "nombre": "Electiva V",
+                    "creditos": 2
+                },
+                {
+                    "codigo": "ARQA901",
+                    "nombre": "Optativa III",
+                    "creditos": 3,
+                    "requisitos": [
+                        "ARQA803"
+                    ]
+                }
+            ]
+        },
+        {
+            "nivel": 10,
+            "materias": [
+                {
+                    "codigo": "ARQA10",
+                    "nombre": "Práctica Profesional",
+                    "creditos": 14,
+                    "requisitos": [
+                        "ARQA601",
+                        "ARQA703",
+                        "ARQA902",
+                        "ARQA904",
+                        "ARQA905"
+                    ]
+                }
+            ]
+        }
+    ]
+}
