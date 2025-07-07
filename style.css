@@ -1,0 +1,79 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#contador-creditos {
+    font-size: 16px;
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 16px;
+    background-color: #ff9800;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e68900;
+}
+
+.nivel {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 220px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.materia {
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.materia:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+.materia.aprobada {
+    background-color: #c8e6c9;
+    text-decoration: line-through;
+}
+
+.materia.bloqueada {
+    background-color: #eeeeee;
+    color: #999;
+}
+
+.materia.disponible {
+    background-color: #bbdefb;
+}
+
+.tipo-diseno { background-color: #e1bee7; }
+.tipo-construccion { background-color: #eeeeee; }
+.tipo-teoria { background-color: #d7ccc8; }
+.tipo-digital { background-color: #b3e5fc; }
+.tipo-formacion { background-color: #fff9c4; }
+.tipo-urbanismo { background-color: #c8e6c9; }
+.tipo-optativa { background-color: #b2dfdb; }
+.tipo-gestion { background-color: #ffe0b2; }
