@@ -1,7 +1,29 @@
-fetch('pensum_arquitectura_4319.json')
-  .then(res => res.json())
-  .then(data => {
+let materiasAprobadas = new Set();
+let totalCreditos = 167;
+let datosPensum = null;
+
+function puedeTomar(materia, aprobadas) {
+    if (!materia.requisitos) return true;
+    return materia.requisitos.every(req => aprobadas.has(req));
+}
+
+function calcularCreditos(data) {
+    let suma = 0;
+    data.niveles.forEach(nivel => {
+        nivel.materias.forEach(materia => {
+            if (materiasAprobadas.has(materia.codigo)) {
+                suma += materia.creditos;
+            }
+        });
+    });
+    return suma;
+}
+
+function actualizarVista(data) {
     const contenedor = document.getElementById('malla');
+    const contador = document.getElementById('contador-creditos');
+    contenedor.innerHTML = '';
+
     data.niveles.forEach(nivel => {
         const divNivel = document.createElement('div');
         divNivel.className = 'nivel';
@@ -12,10 +34,22 @@ fetch('pensum_arquitectura_4319.json')
         nivel.materias.forEach(materia => {
             const divMateria = document.createElement('div');
             divMateria.className = 'materia';
-            divMateria.innerHTML = `<strong>${materia.nombre}</strong><br><span>${materia.codigo} (${materia.creditos} créditos)</span>`;
-            divNivel.appendChild(divMateria);
-        });
+            divMateria.id = materia.codigo;
 
-        contenedor.appendChild(divNivel);
-    });
-  });
+            if (materiasAprobadas.has(materia.codigo)) {
+                divMateria.style.background = '#c8e6c9'; // verde
+                divMateria.style.textDecoration = 'line-through';
+            } else if (puedeTomar(materia, materiasAprobadas)) {
+                divMateria.style.background = '#bbdefb'; // azul
+            } else {
+                divMateria.style.background = '#eeeeee'; // gris
+                divMateria.style.color = '#999';
+            }
+
+            divMateria.innerHTML = `
+                <strong>${materia.nombre}</strong><br>
+                <span>${materia.codigo} (${materia.creditos} créditos)</span>
+            `;
+
+            divMateria.onclick = () => {
+                if (mate
