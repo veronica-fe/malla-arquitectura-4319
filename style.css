@@ -30,32 +30,56 @@ button:hover {
   background-color: #0056b3;
 }
 
-.nivel {
-  margin-bottom: 30px;
-  padding: 10px;
-  border-left: 4px solid #007bff;
-  background: #ffffff;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+.grid-anual {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #444;
 }
 
-.nivel h3 {
+.grid-anual .anio {
+  flex: 1;
+  text-align: center;
+}
+
+.grid-semestres {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.semestre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+  margin: 0 5px;
+}
+
+.semestre h4 {
+  margin: 5px 0 10px;
+  font-size: 16px;
   background-color: #e3f2fd;
-  margin: 0 0 10px 0;
-  padding: 6px 12px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 6px;
   color: #333;
 }
 
 .materia {
   margin: 6px;
   display: inline-block;
-  width: 230px;
-  height: 150px;
+  width: 170px;
+  height: 120px;
   vertical-align: top;
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .materia:hover {
@@ -70,6 +94,8 @@ button:hover {
   height: 100%;
   padding: 8px 12px;
   box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 .top,
@@ -82,14 +108,26 @@ button:hover {
 
 .nombre {
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
   margin: 10px 0;
 }
 
 .aprobada {
-  background-color: #d0f0c0;
   opacity: 1;
+}
+
+.aprobada::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 2px, transparent 2px, transparent 4px);
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 10px;
 }
 
 .disponible {
@@ -110,3 +148,4 @@ button:hover {
 .tipo-URB { background-color: #aed581; }
 .tipo-OPT { background-color: #80cbc4; }
 .tipo-GES { background-color: #ffab91; }
+.tipo-GEN { background-color: #e0e0e0; }
