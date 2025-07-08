@@ -119,11 +119,14 @@ function actualizarVista(data) {
 
   let aprobados = calcularCreditos(data);
   let totalMaterias = 0;
-data.niveles.forEach(n => totalMaterias += n.materias.length);
-let materiasOk = materiasAprobadas.size;
-let porcentajeCreditos = Math.round((aprobados / totalCreditos) * 100);
-let porcentajeMaterias = Math.round((materiasOk / totalMaterias) * 100);
-contador.innerHTML = `Créditos aprobados: <strong>${aprobados}</strong> de <strong>${totalCreditos}</strong> (${porcentajeCreditos}%)<br>Materias aprobadas: <strong>${materiasOk}</strong> de <strong>${totalMaterias}</strong> (${porcentajeMaterias}%)`;
+  data.niveles.forEach(n => totalMaterias += n.materias.length);
+  let materiasOk = materiasAprobadas.size;
+  let porcentajeCreditos = Math.round((aprobados / totalCreditos) * 100);
+  let porcentajeMaterias = Math.round((materiasOk / totalMaterias) * 100);
+  contador.innerHTML = `
+    Créditos aprobados: <strong>${aprobados}</strong> de <strong>${totalCreditos}</strong> (${porcentajeCreditos}%)<br>
+    Materias aprobadas: <strong>${materiasOk}</strong> de <strong>${totalMaterias}</strong> (${porcentajeMaterias}%)
+  `;
 }
 
 function toRoman(n) {
@@ -138,32 +141,4 @@ function toRoman(n) {
       n -= value;
     }
   }
-  return result;
-}
-
-function guardarProgreso() {
-  localStorage.setItem("materiasAprobadas", JSON.stringify(Array.from(materiasAprobadas)));
-}
-
-function cargarProgreso() {
-  const data = localStorage.getItem("materiasAprobadas");
-  if (data) {
-    materiasAprobadas = new Set(JSON.parse(data));
-  }
-}
-
-function reiniciarProgreso() {
-  if (confirm("¿Seguro que deseas borrar tu progreso?")) {
-    materiasAprobadas.clear();
-    guardarProgreso();
-    actualizarVista(datosPensum);
-  }
-}
-
-fetch('pensum_arquitectura_4319.json')
-  .then(res => res.json())
-  .then(data => {
-    datosPensum = data;
-    cargarProgreso();
-    actualizarVista(data);
-  });
+  return
