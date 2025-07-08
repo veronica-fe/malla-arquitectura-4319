@@ -1,47 +1,37 @@
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: #f2f2f2;
+    background: #f7f7f7;
     margin: 0;
     padding: 20px;
 }
-
 h1 {
     text-align: center;
     margin-bottom: 30px;
 }
-
-#contador-creditos {
-    font-size: 16px;
-    text-align: center;
-}
-
 button {
     display: block;
-    margin: 10px auto;
-    padding: 10px 16px;
-    background-color: #ff9800;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
     border: none;
-    color: white;
     border-radius: 6px;
+    color: white;
     font-size: 14px;
     cursor: pointer;
 }
-
 button:hover {
-    background-color: #e68900;
+    background-color: #0056b3;
 }
-
 .nivel {
     float: left;
     margin: 10px;
     padding: 10px;
-    background: #fff;
+    background: #ffffff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    width: 220px;
+    width: 230px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
-
 .materia {
     padding: 8px;
     margin: 6px 0;
@@ -49,31 +39,26 @@ button:hover {
     cursor: pointer;
     transition: all 0.2s ease;
 }
-
 .materia:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
     box-shadow: 0 0 6px rgba(0,0,0,0.2);
 }
-
-.materia.aprobada {
+.aprobada {
     background-color: #c8e6c9;
     text-decoration: line-through;
 }
-
-.materia.bloqueada {
+.bloqueada {
     background-color: #eeeeee;
     color: #999;
 }
-
-.materia.disponible {
+.disponible {
     background-color: #bbdefb;
 }
-
-.tipo-diseno { background-color: #e1bee7; }
-.tipo-construccion { background-color: #eeeeee; }
-.tipo-teoria { background-color: #d7ccc8; }
-.tipo-digital { background-color: #b3e5fc; }
-.tipo-formacion { background-color: #fff9c4; }
-.tipo-urbanismo { background-color: #c8e6c9; }
-.tipo-optativa { background-color: #b2dfdb; }
-.tipo-gestion { background-color: #ffe0b2; }
+.tipo-DIS { background-color: #e1bee7; }
+.tipo-CON { background-color: #eeeeee; }
+.tipo-TEO { background-color: #d7ccc8; }
+.tipo-DIG { background-color: #b3e5fc; }
+.tipo-FOR { background-color: #fff9c4; }
+.tipo-URB { background-color: #c8e6c9; }
+.tipo-OPT { background-color: #b2dfdb; }
+.tipo-GES { background-color: #ffe0b2; }
