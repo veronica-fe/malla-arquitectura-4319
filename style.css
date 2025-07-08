@@ -1,64 +1,112 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f7f7f7;
-    margin: 0;
-    padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 20px;
 }
+
 h1 {
-    text-align: center;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
+
+#creditos-container {
+  text-align: center;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
 button {
-    display: block;
-    margin: 0 auto 20px auto;
-    padding: 10px 20px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
+
 button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
+
 .nivel {
-    float: left;
-    margin: 10px;
-    padding: 10px;
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 230px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  padding: 10px;
+  border-left: 4px solid #007bff;
+  background: #ffffff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
+
+.nivel h3 {
+  background-color: #e3f2fd;
+  margin: 0 0 10px 0;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #333;
+}
+
 .materia {
-    padding: 8px;
-    margin: 6px 0;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.2s ease;
+  margin: 6px;
+  display: inline-block;
+  width: 230px;
+  height: 150px;
+  vertical-align: top;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .materia:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+
+.cuadro-materia {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 8px 12px;
+  box-sizing: border-box;
+}
+
+.top,
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.nombre {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
 .aprobada {
-    background-color: #c8e6c9;
-    text-decoration: line-through;
+  background-color: #d0f0c0;
+  opacity: 1;
 }
-.bloqueada {
-    background-color: #eeeeee;
-    color: #999;
-}
+
 .disponible {
-    background-color: #bbdefb;
+  opacity: 1;
 }
-.tipo-DIS { background-color: #e1bee7; }
-.tipo-CON { background-color: #eeeeee; }
-.tipo-TEO { background-color: #d7ccc8; }
-.tipo-DIG { background-color: #b3e5fc; }
-.tipo-FOR { background-color: #fff9c4; }
-.tipo-URB { background-color: #c8e6c9; }
-.tipo-OPT { background-color: #b2dfdb; }
-.tipo-GES { background-color: #ffe0b2; }
+
+.bloqueada {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Colores vivos por tipo */
+.tipo-DIS { background-color: #f48fb1; }
+.tipo-CON { background-color: #ffcc80; }
+.tipo-TEO { background-color: #b39ddb; }
+.tipo-DIG { background-color: #81d4fa; }
+.tipo-FOR { background-color: #fff176; }
+.tipo-URB { background-color: #aed581; }
+.tipo-OPT { background-color: #80cbc4; }
+.tipo-GES { background-color: #ffab91; }
