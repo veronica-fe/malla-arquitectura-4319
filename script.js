@@ -1,6 +1,8 @@
+// Paso 1: Numerar materias y construir mapa de números
 let materiasAprobadas = new Set();
 let totalCreditos = 167;
 let datosPensum = null;
+let mapaNumeros = {}; // clave: código, valor: número asignado
 
 function puedeTomar(materia, aprobadas) {
     if (!materia.requisitos) return true;
@@ -24,11 +26,20 @@ function actualizarVista(data) {
     const contador = document.getElementById('contador-creditos');
     contenedor.innerHTML = '';
 
+    let numeroGlobal = 1;
+    mapaNumeros = {};
+
+    data.niveles.forEach(nivel => {
+        nivel.materias.forEach(m => {
+            mapaNumeros[m.codigo] = numeroGlobal++;
+        });
+    });
+
     data.niveles.forEach(nivel => {
         const divNivel = document.createElement('div');
         divNivel.className = 'nivel';
         const titulo = document.createElement('h3');
-        titulo.textContent = 'Nivel ' + nivel.nivel;
+        titulo.textContent = `Año ${Math.ceil(nivel.nivel/2)} - Semestre ${toRoman(nivel.nivel)}`;
         divNivel.appendChild(titulo);
 
         nivel.materias.forEach(materia => {
@@ -57,9 +68,21 @@ function actualizarVista(data) {
                 divMateria.classList.add("bloqueada");
             }
 
+            const numero = mapaNumeros[materia.codigo];
+            const requisitosNumerados = (materia.requisitos || []).map(cod => mapaNumeros[cod]).filter(Boolean);
+
             divMateria.innerHTML = `
-                <strong>${materia.nombre}</strong><br>
-                <span>${materia.codigo} (${materia.creditos} créditos)</span>
+                <div class="cuadro-materia">
+                  <div class="top">
+                    <span class="sigla">${materia.codigo}</span>
+                    <span class="numero">#${numero}</span>
+                  </div>
+                  <div class="nombre">${materia.nombre}</div>
+                  <div class="bottom">
+                    <span class="creditos">${materia.creditos} créditos</span>
+                    <span class="reqs">Req: ${requisitosNumerados.join(", ") || "-"}</span>
+                  </div>
+                </div>
             `;
 
             divMateria.onclick = () => {
@@ -80,6 +103,21 @@ function actualizarVista(data) {
 
     let aprobados = calcularCreditos(data);
     contador.textContent = `Créditos aprobados: ${aprobados} de ${totalCreditos}`;
+}
+
+function toRoman(n) {
+    const map = [
+        [10, 'X'], [9, 'IX'], [8, 'VIII'], [7, 'VII'], [6, 'VI'],
+        [5, 'V'], [4, 'IV'], [3, 'III'], [2, 'II'], [1, 'I']
+    ];
+    let result = '';
+    for (let [value, numeral] of map) {
+        while (n >= value) {
+            result += numeral;
+            n -= value;
+        }
+    }
+    return result;
 }
 
 function guardarProgreso() {
@@ -108,17 +146,3 @@ fetch('pensum_arquitectura_4319.json')
         cargarProgreso();
         actualizarVista(data);
     });
-
-document.addEventListener('DOMContentLoaded', () => {
-    const contador = document.createElement('div');
-    contador.id = 'contador-creditos';
-    contador.style.margin = '10px 0';
-    contador.style.fontWeight = 'bold';
-    document.body.insertBefore(contador, document.getElementById('malla'));
-
-    const botonReset = document.createElement('button');
-    botonReset.textContent = '🔄 Reiniciar progreso';
-    botonReset.style.margin = '10px 0';
-    botonReset.onclick = reiniciarProgreso;
-    document.body.insertBefore(botonReset, contador);
-});
