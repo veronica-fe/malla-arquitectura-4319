@@ -141,4 +141,32 @@ function toRoman(n) {
       n -= value;
     }
   }
-  return
+  return result;
+}
+
+function guardarProgreso() {
+  localStorage.setItem("materiasAprobadas", JSON.stringify(Array.from(materiasAprobadas)));
+}
+
+function cargarProgreso() {
+  const data = localStorage.getItem("materiasAprobadas");
+  if (data) {
+    materiasAprobadas = new Set(JSON.parse(data));
+  }
+}
+
+function reiniciarProgreso() {
+  if (confirm("¿Seguro que deseas borrar tu progreso?")) {
+    materiasAprobadas.clear();
+    guardarProgreso();
+    actualizarVista(datosPensum);
+  }
+}
+
+fetch('pensum_arquitectura_4319.json')
+  .then(res => res.json())
+  .then(data => {
+    datosPensum = data;
+    cargarProgreso();
+    actualizarVista(data);
+  });
